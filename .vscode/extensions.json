@@ -1,8 +1,7 @@
 {
     "recommendations": [
-        "abusaidm.html-snippets",
-        "anderseandersen.html-class-suggestions",
-        "influrium.haxe-jsx",
-        "ecmel.vscode-html-css"
+        "mhutchie.git-graph",
+        "skacekachna.vscode-improved-react-snippets",
+        "rulexec.custom-autoimport"
     ]
 }
