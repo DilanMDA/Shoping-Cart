@@ -2,6 +2,7 @@
     "recommendations": [
         "abusaidm.html-snippets",
         "anderseandersen.html-class-suggestions",
-        "influrium.haxe-jsx"
+        "influrium.haxe-jsx",
+        "ecmel.vscode-html-css"
     ]
 }
