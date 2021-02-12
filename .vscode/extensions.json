@@ -2,6 +2,7 @@
     "recommendations": [
         "mhutchie.git-graph",
         "skacekachna.vscode-improved-react-snippets",
-        "rulexec.custom-autoimport"
+        "rulexec.custom-autoimport",
+        "svipas.prettier-plus"
     ]
 }
