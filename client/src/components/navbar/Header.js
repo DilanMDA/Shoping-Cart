@@ -8,7 +8,8 @@ import
 	UserAddOutlined,
 } from '@ant-design/icons';
 
-const { SubMenu } = Menu;
+const { SubMenu , Item } = Menu;
+ 
 
 const Header = () =>
 {
@@ -22,21 +23,21 @@ const Header = () =>
 
 	return (
 		<Menu onClick={ handleClick } selectedKeys={ [ current ] } mode="horizontal">
-			<Menu.Item key="home" icon={ <AppstoreOutlined /> } className="float-start">
+			<Item key="home" icon={ <AppstoreOutlined /> } className="float-start">
 				Home
-			</Menu.Item>
+			</Item>
 
-			<Menu.Item key="register" icon={ <UserAddOutlined /> } className="float-end">
+			<Item key="register" icon={ <UserAddOutlined /> } className="float-end">
 				Register
-			</Menu.Item>
-			<Menu.Item key="login" icon={ <UserOutlined /> } className="float-end" >
+			</Item>
+			<Item key="login" icon={ <UserOutlined /> } className="float-end" >
 				Login
-			</Menu.Item>
+			</Item>
 
 
 			<SubMenu icon={ <SettingOutlined /> } title="Username">
-				<Menu.Item key="setting:1">Option 1</Menu.Item>
-				<Menu.Item key="setting:2">Option 2</Menu.Item>
+				<Item key="setting:1">Option 1</Item>
+				<Item key="setting:2">Option 2</Item>
 			</SubMenu>
 		</Menu>
 		
