@@ -11,7 +11,7 @@ const initialValues = {
 	password: '',
 };
 const onSubmit = (values) => {
-	console.log('Form data', values);
+	// console.log('Form data', values);
 };
 
 const validate = (values) => {
@@ -30,7 +30,7 @@ const validate = (values) => {
 		errors.Uname = 'This field is required';
 	}
 	if (!values.email) {
-		errors.Fname = 'This field is required';
+		errors.email = 'This field is required';
 	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
 		errors.email = 'Invalid email format';
 	}
@@ -49,7 +49,7 @@ const Register = () => {
 		onSubmit,
 		validate,
 	});
-	// console.log('Form values', formik.values);
+	console.log('Form errors', formik.errors);
 
 	return (
 		<main>
@@ -69,6 +69,9 @@ const Register = () => {
 								onChange={formik.handleChange}
 								value={formik.values.Fname}
 							/>
+							{formik.errors.Fname ? (
+								<div className="error">{formik.errors.Fname}</div>
+							) : null}
 						</div>
 					</div>
 
@@ -84,6 +87,9 @@ const Register = () => {
 								onChange={formik.handleChange}
 								value={formik.values.Lname}
 							/>
+							{formik.errors.Lname ? (
+								<div className="error">{formik.errors.Lname}</div>
+							) : null}
 						</div>
 					</div>
 					<div className="form-group">
@@ -98,6 +104,9 @@ const Register = () => {
 								onChange={formik.handleChange}
 								value={formik.values.Uname}
 							/>
+							{formik.errors.Uname ? (
+								<div className="error">{formik.errors.Uname}</div>
+							) : null}
 						</div>
 					</div>
 
@@ -113,6 +122,9 @@ const Register = () => {
 								onChange={formik.handleChange}
 								value={formik.values.email}
 							/>
+							{formik.errors.email ? (
+								<div className="error">{formik.errors.email}</div>
+							) : null}
 						</div>
 					</div>
 
@@ -128,6 +140,9 @@ const Register = () => {
 								onChange={formik.handleChange}
 								value={formik.values.password}
 							/>
+							{formik.errors.password ? (
+								<div className="errors">{formik.error.password}</div>
+							) : null}
 						</div>
 					</div>
 
