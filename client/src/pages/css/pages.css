@@ -1,29 +1,188 @@
-label {
-  font-weight: bold;
+
+* {
+  box-sizing: border-box;
+  /* padding: 10px;  */
+    -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* body {
+  background: #04e6f7 !important;
+  min-height: 100vh;
   display: flex;
-  margin-bottom: 5px;
+  font-weight: 400;
+  font-family: 'Fira Sans', sans-serif;
+} */
+main{
+  align-items: auto;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top:2.5rem;
+  padding-bottom: 2rem;
+}
+h1,h2,h3,h4,h5,h6,label,span {
+  font-weight: 500;
+  font-family: 'Fira Sans', sans-serif;
+  align-items: center;
+  align-content: center;
+}
+h3{
+  align-items: center;
+  text-align: center;
+}
+body, html, .App, #root, .auth-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
-input[type='text'],
-input[type='email'],
-textarea {
-  display: block;
-  width: 400px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  /* margin-bottom: 20px; */
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
 
-.form-control {
-  margin-bottom: 20px;
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
 }
 
-.error {
-  color: red;
+.auth-inner {
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #167bff;
+  box-shadow: none;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.btn{
+  padding: 10px;
+
+  /* position: relative; */
+ 
+}
+.btn.btn-primary.btn-block{
+padding: 2.5px;
+  align-items: right;
+  align-content: right;
+  text-align: right;
+
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+.form{
+    border: 2.5px solid rgb(201, 199, 199);
+    background-color: #cccccc;
+    box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+     box-sizing: border-box;
+       background: #bbb9b9;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  padding:  0em 1em;
+  border-radius: 16px;
+  font-size: 24px;
+  line-height: 2;
+}
+
+.form.form-group {
+    position: relative;
+  width: 25vw;
+  height: 50vh;
+  min-height: 320px;
+  background: #f2f2f2;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 30px;
+  box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.form.form-group:hover{
+   color: #f2f2f2;
+  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5)
+}
+
+.form.form-group.input{
+  margin: 0;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.form.form-group::after {
+ 
+  position: absolute;
+  bottom: -10%;
+  right: 5%;
+  font-size: 120px;
+  opacity: 0.2;
+  background: transparent;
+  filter: invert(1);
+  pointer-events: none;
+}
+
+.form.form-group::before {
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 120px;
+  opacity: 0.2;
+  background: transparent;
+  pointer-events: none;
+}
+.form:hover {
+  color: #f2f2f2;
+  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* .form .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  pointer-events: none;
+  width: 100%;
+  height: 200%;
+  overflow:  visible;
+} */
+.form .form-group:hover {
+  opacity: 1;
+  background: #4b384c;
+background: -moz-linear-gradient(-45deg, #ff048e 15%, #ffd900 100%);
+background: -webkit-linear-gradient(-45deg, #ff048e 15%,#ffd900 100%);
+background: linear-gradient(135deg, #ff048e 15%,#ffd900 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b384c', endColorstr='#da5de2',GradientType=1 );
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
 }
