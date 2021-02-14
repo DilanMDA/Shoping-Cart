@@ -1,31 +1,28 @@
-import React, { useState } from 'react';
-
+import { Form } from 'formik/dist/Form';
+import React from 'react';
+// import { useFormik } from 'formik';
+// import * as Yup from 'yup';
+import '../css/pages.css';
+ 
 const Register = () => {
-	const [email, setEmail] = useState(' ');
-	const handleSubmit = () => {
-		//
-	};
+	return (
+		<form>
+			<label htmlFor="fname"> First Name</label>
+			<input type='text' id='fname' name='fname' />
+			
+			<label htmlFor="lname">Name</label>
+			<input type='text' id='lname' name='lname' />
+			
+			<label htmlFor="uname">User Name</label>
+			<input type='text' id='uname' name='uname'/>
 
-	const registerForm = () => (
-		<form onSubmit={handleSubmit}>
-			<input
-				type="email"
-				className="form-control"
-				onChange={(e) => console.log(e.target.value)}
-				autoFocus
-			/>
+			<label htmlFor="email">Email</label>
+			<input type='text' id='email' name='email' />
+
+			<button>Submit</button>
 		</form>
 	);
-	return (
-		<div className="container p-5">
-			<div className="row">
-				<div className="col-md-6 offset-3">
-					<h4>Register</h4>
-					{registerForm()}
-				</div>
-			</div>
-		</div>
-	);
+	
 };
 
 export default Register;
