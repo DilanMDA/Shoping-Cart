@@ -15,13 +15,16 @@ const Register = () => {
 			email: '',
 			password: '',
 		},
+		onSubmit: (values) => {
+			console.log('Form data', values);
+		},
 	});
-	console.log('Form values', formik.values);
+	// console.log('Form values', formik.values);
 
 	return (
 		<main>
 			<div className="form">
-				<form>
+				<form onSubmit={formik.handleSubmit}>
 					<h3>Sign Up</h3>
 
 					<div className="form-group">
