@@ -97,12 +97,12 @@ const Register = () => {
 							/>
 						</div>
 					</div>
-					<div className="btn">
-						<button type="submit" className="btn btn-primary btn-block">
-							Sign Up
-						</button>
-					</div>
-					<p className="forgot-password text-right">
+
+					<button type="submit" className="btn">
+						Sign Up
+					</button>
+
+					<p className="signIn">
 						Already registered <a href="#">sign in?</a>
 					</p>
 				</form>

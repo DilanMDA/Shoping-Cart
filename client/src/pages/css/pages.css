@@ -69,21 +69,44 @@ body, html, .App, #root, .auth-wrapper {
   line-height: 1;
   padding-bottom: 20px;
 }
+ 
 
 .btn{
-  padding: 10px;
-
-  /* position: relative; */
- 
-}
-.btn.btn-primary.btn-block{
-padding: 2.5px;
+  width: 150px;
+  background-color: #1473ee;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: rgb(49, 19, 19);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
   align-items: right;
   align-content: right;
-  text-align: right;
-
+  float: left;
+}
+.btn:hover {
+  background-color: #ee0886;
 }
 
+.signIn a {
+  text-align: right;
+  font-size: 20px;
+  padding-top: 15px;
+  color: #167bff;
+  margin: 0;
+}
+
+.signIn  {
+  color: #000000;
+  float: right;
+  font-size: 20px;
+    padding-top: 15px;
+}
 .custom-control-label {
   font-weight: 400;
 }
@@ -174,15 +197,4 @@ background: linear-gradient(135deg, #ff048e 15%,#ffd900 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b384c', endColorstr='#da5de2',GradientType=1 );
 }
 
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
-
-.forgot-password a {
-  color: #167bff;
-}
+ 
