@@ -3,21 +3,51 @@ import { useFormik } from 'formik';
 
 import '../css/pages.css';
 
+const initialValues = {
+	Fname: 'Akila',
+	Lname: '',
+	Uname: '',
+	email: '',
+	password: '',
+};
+const onSubmit = (values) => {
+	console.log('Form data', values);
+};
+
+const validate = (values) => {
+	// values.Fname values.Lname values.Uname values.email values.password
+	// errors.Fname ........
+	// errors.Fname= 'this field is required'
+	let errors = {};
+
+	if (!values.Fname) {
+		errors.Fname = 'This field is required';
+	}
+	if (!values.Lname) {
+		errors.Lname = 'This field is required';
+	}
+	if (!values.Uname) {
+		errors.Uname = 'This field is required';
+	}
+	if (!values.email) {
+		errors.Fname = 'This field is required';
+	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+		errors.email = 'Invalid email format';
+	}
+	if (!values.password) {
+		errors.password = 'This field is required';
+	}
+	return errors;
+};
 const Register = () => {
 	// Managing the form state
+
 	// Handling form submission
 	//  Validation and error messages
 	const formik = useFormik({
-		initialValues: {
-			Fname: 'Akila',
-			Lname: '',
-			Uname: '',
-			email: '',
-			password: '',
-		},
-		onSubmit: (values) => {
-			console.log('Form data', values);
-		},
+		initialValues,
+		onSubmit,
+		validate,
 	});
 	// console.log('Form values', formik.values);
 
