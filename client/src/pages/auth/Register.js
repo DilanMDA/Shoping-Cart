@@ -15,32 +15,6 @@ const onSubmit = (values) => {
 	// console.log('Form data', values);
 };
 
-const validate = (values) => {
-	// values.Fname values.Lname values.Uname values.email values.password
-	// errors.Fname ........
-	// errors.Fname= 'this field is required'
-	let errors = {};
-
-	if (!values.Fname) {
-		errors.Fname = 'This field is required';
-	}
-	if (!values.Lname) {
-		errors.Lname = 'This field is required';
-	}
-	if (!values.Uname) {
-		errors.Uname = 'This field is required';
-	}
-	if (!values.email) {
-		errors.email = 'This field is required';
-	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-		errors.email = 'Invalid email format';
-	}
-	if (!values.password) {
-		errors.password = 'This field is required';
-	}
-	return errors;
-};
-
 const validationSchema = yup.object().shape({
 	Fname: yup.string().required('Required'),
 	Lname: yup.string().required('Required'),
@@ -55,13 +29,11 @@ const validationSchema = yup.object().shape({
 
 const Register = () => {
 	// Managing the form state
-
 	// Handling form submission
 	//  Validation and error messages
 	const formik = useFormik({
 		initialValues,
 		onSubmit,
-		// validate,
 		validationSchema,
 	});
 	console.log('Visted Field', formik.touched);
@@ -81,9 +53,7 @@ const Register = () => {
 								placeholder="First name"
 								id="Fname"
 								name="Fname"
-								onBlur={formik.handleBlur} // handleBlur is helper method that we get constant
-								onChange={formik.handleChange}
-								value={formik.values.Fname}
+								{...formik.getFieldProps('Fname')}
 							/>
 							{formik.touched.Fname && formik.errors.Fname ? (
 								<div className="error">{formik.errors.Fname}</div>
@@ -100,9 +70,7 @@ const Register = () => {
 								placeholder="Last name"
 								id="Lname"
 								name="Lname"
-								onChange={formik.handleChange}
-								onBlur={formik.handleBlur}
-								value={formik.values.Lname}
+								{...formik.getFieldProps('Lname')}
 							/>
 							{formik.touched.Lname && formik.errors.Lname ? (
 								<div className="error">{formik.errors.Lname}</div>
@@ -118,9 +86,7 @@ const Register = () => {
 								placeholder="User name"
 								id="Uname"
 								name="Uname"
-								onChange={formik.handleChange}
-								onBlur={formik.handleBlur}
-								value={formik.values.Uname}
+								{...formik.getFieldProps('Uname')}
 							/>
 							{formik.touched.Uname && formik.errors.Uname ? (
 								<div className="error">{formik.errors.Uname}</div>
@@ -137,9 +103,7 @@ const Register = () => {
 								placeholder="Enter email"
 								id="email"
 								name="email"
-								onChange={formik.handleChange}
-								onBlur={formik.handleBlur}
-								value={formik.values.email}
+								{...formik.getFieldProps('email')}
 							/>
 							{formik.touched.email && formik.errors.email ? (
 								<div className="error">{formik.errors.email}</div>
@@ -156,9 +120,7 @@ const Register = () => {
 								placeholder="Enter password"
 								id="password"
 								name="password"
-								onChange={formik.handleChange}
-								onBlur={formik.handleBlur}
-								value={formik.values.password}
+								{...formik.getFieldProps('password')}
 							/>
 							{formik.touched.password && formik.errors.password ? (
 								<div className="error">{formik.error.password}</div>
