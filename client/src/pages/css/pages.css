@@ -29,7 +29,28 @@ body, html, .App, #root, .auth-wrapper {
   height: 100%;
 }
  
-.btn{
+ 
+.btnReset{
+   width: 150px;
+  background-color: #1473ee;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: rgb(49, 19, 19);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px ;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  float:  inherit;
+  padding-left: 15px;
+  
+}
+.btnSubmit{
   width: 150px;
   background-color: #1473ee;
   border: none;
@@ -39,15 +60,17 @@ body, html, .App, #root, .auth-wrapper {
   color: rgb(49, 19, 19);
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 10px ;
   cursor: pointer;
   transition: 0.5s;
   text-align: center;
   align-items: right;
   align-content: right;
-  float: left;
+  float:   inherit;
+  padding-right: 15px;
 }
-.btn:hover {
+.btnSubmit:hover, 
+.btnReset:hover {
   background-color: #ee0886;
 }
 
@@ -116,14 +139,15 @@ body, html, .App, #root, .auth-wrapper {
   padding: 30px;
   box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
    border: 2.5px solid rgb(0, 0, 0); 
+   
 }
 
 .form .form-group:hover {
   opacity: 1;
   background: #4b384c;
-background: -moz-linear-gradient(-45deg, #ff048e 15%, #ffd900 100%);
-background: -webkit-linear-gradient(-45deg, #ff048e 15%,#ffd900 100%);
-background: linear-gradient(135deg, #ff048e 15%,#ffd900 100%);
+background: -moz-linear-gradient(-45deg, #ff6004 15%, #00ffd5 100%);
+background: -webkit-linear-gradient(-45deg, #ff048e 15%,#00ffd5 100%);
+background: linear-gradient(135deg, #ff048e 15%,#00ffd5 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b384c', endColorstr='#da5de2',GradientType=1 );
   border-radius: 15px;
     color: #f2f2f2;
@@ -152,7 +176,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b384c', end
 
 
  
-.error{
+ .error{
   color:#ff0000;
   text-align: left;
   font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
