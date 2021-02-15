@@ -3,6 +3,7 @@
         "mhutchie.git-graph",
         "skacekachna.vscode-improved-react-snippets",
         "rulexec.custom-autoimport",
-        "svipas.prettier-plus"
+        "svipas.prettier-plus",
+        "esbenp.prettier-vscode"
     ]
 }

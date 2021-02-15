@@ -1,10 +1,11 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import * as yup from 'yup';
 
 import '../css/pages.css';
 
 const initialValues = {
-	Fname: 'Akila',
+	Fname: '',
 	Lname: '',
 	Uname: '',
 	email: '',
@@ -39,6 +40,19 @@ const validate = (values) => {
 	}
 	return errors;
 };
+
+const validationSchema = yup.object().shape({
+	Fname: yup.string().required('Required'),
+	Lname: yup.string().required('Required'),
+	Uname: yup.string().required('Required'),
+	email: yup.string().email('Invalid email format').required('Required'),
+	password: yup
+		.string()
+		.required('No password provided.')
+		.min(8, 'Password is too short - should be 8 chars minimum.')
+		.matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+});
+
 const Register = () => {
 	// Managing the form state
 
@@ -47,9 +61,10 @@ const Register = () => {
 	const formik = useFormik({
 		initialValues,
 		onSubmit,
-		validate,
+		// validate,
+		validationSchema,
 	});
-	console.log('Form errors', formik.errors);
+	console.log('Visted Field', formik.touched);
 
 	return (
 		<main>
@@ -59,17 +74,18 @@ const Register = () => {
 
 					<div className="form-group">
 						<div className="input">
-							<label>First name</label>
+							<label className="label">First name</label>
 							<input
 								type="text"
 								className="form-control"
 								placeholder="First name"
 								id="Fname"
 								name="Fname"
+								onBlur={formik.handleBlur} // handleBlur is helper method that we get constant
 								onChange={formik.handleChange}
 								value={formik.values.Fname}
 							/>
-							{formik.errors.Fname ? (
+							{formik.touched.Fname && formik.errors.Fname ? (
 								<div className="error">{formik.errors.Fname}</div>
 							) : null}
 						</div>
@@ -85,9 +101,10 @@ const Register = () => {
 								id="Lname"
 								name="Lname"
 								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								value={formik.values.Lname}
 							/>
-							{formik.errors.Lname ? (
+							{formik.touched.Lname && formik.errors.Lname ? (
 								<div className="error">{formik.errors.Lname}</div>
 							) : null}
 						</div>
@@ -102,9 +119,10 @@ const Register = () => {
 								id="Uname"
 								name="Uname"
 								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								value={formik.values.Uname}
 							/>
-							{formik.errors.Uname ? (
+							{formik.touched.Uname && formik.errors.Uname ? (
 								<div className="error">{formik.errors.Uname}</div>
 							) : null}
 						</div>
@@ -120,9 +138,10 @@ const Register = () => {
 								id="email"
 								name="email"
 								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								value={formik.values.email}
 							/>
-							{formik.errors.email ? (
+							{formik.touched.email && formik.errors.email ? (
 								<div className="error">{formik.errors.email}</div>
 							) : null}
 						</div>
@@ -138,10 +157,11 @@ const Register = () => {
 								id="password"
 								name="password"
 								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								value={formik.values.password}
 							/>
-							{formik.errors.password ? (
-								<div className="errors">{formik.error.password}</div>
+							{formik.touched.password && formik.errors.password ? (
+								<div className="error">{formik.error.password}</div>
 							) : null}
 						</div>
 					</div>
